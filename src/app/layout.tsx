@@ -47,6 +47,7 @@ export default function RootLayout({
           </>
         )}
         <Header />
+        <meta name="google-site-verification" content="hBicHnsVbZme-3F9Ru9IKE48B0ukuLBRkm8sh7kO_HQ" />
         <main className="flex-1">{children}</main>
         <Footer />
       </body>

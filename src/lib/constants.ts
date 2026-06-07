@@ -1,6 +1,6 @@
 export const SITE_NAME = "GSTCalc.in";
 export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://gstcalc.in";
+  process.env.NEXT_PUBLIC_SITE_URL || "https://gst-seven-mu.vercel.app";
 export const LAST_UPDATED = "June 2025";
 export const GA_ID = process.env.NEXT_PUBLIC_GA_ID || "G-XXXXXXXXXX";
 

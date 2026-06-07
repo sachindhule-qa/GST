@@ -1,4 +1,5 @@
 import CalculatorPageLayout from "./CalculatorPageLayout";
+import CalculatorContentLinks from "./CalculatorContentLinks";
 import GSTWidget from "./GSTWidget";
 import ReverseGSTWidget from "./ReverseGSTWidget";
 import TDSWidget from "./TDSWidget";
@@ -50,16 +51,21 @@ export default function CalculatorPage({ slug }: CalculatorPageProps) {
   ];
 
   return (
-    <CalculatorPageLayout
-      slug={slug}
-      h1={data.h1}
-      description={data.intro}
-      calculator={WIDGET_MAP[slug]}
-      steps={data.steps}
-      formula={data.formula}
-      examples={data.examples}
-      faqs={data.faqs}
-      breadcrumbs={breadcrumbs}
-    />
+    <>
+      <CalculatorPageLayout
+        slug={slug}
+        h1={data.h1}
+        description={data.intro}
+        calculator={WIDGET_MAP[slug]}
+        steps={data.steps}
+        formula={data.formula}
+        examples={data.examples}
+        faqs={data.faqs}
+        breadcrumbs={breadcrumbs}
+      />
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 pb-10">
+        <CalculatorContentLinks calculatorSlug={slug} />
+      </div>
+    </>
   );
 }

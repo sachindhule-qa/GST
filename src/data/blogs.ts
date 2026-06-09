@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 import EXTENDED_BLOGS from "./blogs-extended";
 
+=======
+>>>>>>> 4ed6793d4d69d1bb84b4ed9ef8e97c626cda1658
 export type BlogPost = {
   slug: string;
   title: string;
@@ -693,6 +696,7 @@ export const BLOGS: BlogPost[] = [
   },
 ];
 
+<<<<<<< HEAD
 // Merge core + extended blogs into one unified array
 export const ALL_BLOGS: BlogPost[] = [...BLOGS, ...EXTENDED_BLOGS];
 
@@ -706,16 +710,37 @@ export function getBlogsBySilo(silo: string): BlogPost[] {
 
 export function getBlogsByCalculator(calculatorSlug: string): BlogPost[] {
   return ALL_BLOGS.filter((b) => b.relatedCalculator === calculatorSlug);
+=======
+export function getBlogBySlug(slug: string): BlogPost | undefined {
+  return BLOGS.find((b) => b.slug === slug);
+}
+
+export function getBlogsBySilo(silo: string): BlogPost[] {
+  return BLOGS.filter((b) => b.silo === silo);
+}
+
+export function getBlogsByCalculator(calculatorSlug: string): BlogPost[] {
+  return BLOGS.filter((b) => b.relatedCalculator === calculatorSlug);
+>>>>>>> 4ed6793d4d69d1bb84b4ed9ef8e97c626cda1658
 }
 
 export function getRelatedBlogs(currentSlug: string, count = 3): BlogPost[] {
   const current = getBlogBySlug(currentSlug);
+<<<<<<< HEAD
   if (!current) return ALL_BLOGS.slice(0, count);
   return ALL_BLOGS.filter(
+=======
+  if (!current) return BLOGS.slice(0, count);
+  return BLOGS.filter(
+>>>>>>> 4ed6793d4d69d1bb84b4ed9ef8e97c626cda1658
     (b) => b.slug !== currentSlug && (b.silo === current.silo || b.category === current.category)
   ).slice(0, count);
 }
 
 export function getAllBlogSlugs(): string[] {
+<<<<<<< HEAD
   return ALL_BLOGS.map((b) => b.slug);
+=======
+  return BLOGS.map((b) => b.slug);
+>>>>>>> 4ed6793d4d69d1bb84b4ed9ef8e97c626cda1658
 }

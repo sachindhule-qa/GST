@@ -5,7 +5,10 @@ import { getAllBlogSlugs } from "@/data/blogs";
 import { getAllGlossarySlugs } from "@/data/glossary";
 import { getAllComparisonSlugs } from "@/data/comparisons";
 import { getAllFAQSlugs } from "@/data/faqs";
+<<<<<<< HEAD
 import { getAllNewCalculatorSlugs } from "@/lib/all-calculators";
+=======
+>>>>>>> 4ed6793d4d69d1bb84b4ed9ef8e97c626cda1658
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -17,7 +20,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/faq`, lastModified: now, changeFrequency: "weekly", priority: 0.85 },
     { url: `${SITE_URL}/glossary`, lastModified: now, changeFrequency: "weekly", priority: 0.85 },
     { url: `${SITE_URL}/compare`, lastModified: now, changeFrequency: "weekly", priority: 0.85 },
+<<<<<<< HEAD
     { url: `${SITE_URL}/calculators`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
+=======
+>>>>>>> 4ed6793d4d69d1bb84b4ed9ef8e97c626cda1658
   ];
 
   const calculatorPages: MetadataRoute.Sitemap = CALCULATORS.map((calc) => ({
@@ -27,6 +33,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.95,
   }));
 
+<<<<<<< HEAD
   const newCalculatorPages: MetadataRoute.Sitemap = getAllNewCalculatorSlugs().map((slug) => ({
     url: `${SITE_URL}/calculators/${slug}`,
     lastModified: now,
@@ -34,6 +41,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.95,
   }));
 
+=======
+>>>>>>> 4ed6793d4d69d1bb84b4ed9ef8e97c626cda1658
   const blogPages: MetadataRoute.Sitemap = getAllBlogSlugs().map((slug) => ({
     url: `${SITE_URL}/blog/${slug}`,
     lastModified: now,
@@ -67,7 +76,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     ...staticPages,
     ...calculatorPages,
+<<<<<<< HEAD
     ...newCalculatorPages,
+=======
+>>>>>>> 4ed6793d4d69d1bb84b4ed9ef8e97c626cda1658
     ...blogPages,
     ...faqPages,
     ...glossaryPages,

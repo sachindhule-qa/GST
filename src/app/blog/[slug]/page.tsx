@@ -1,7 +1,12 @@
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
+<<<<<<< HEAD
 import { getBlogBySlug, getAllBlogSlugs, getRelatedBlogs } from "@/data/blogs";
 import { createMetadata, createBreadcrumbJsonLd } from "@/lib/seo";
+=======
+import { BLOGS, getBlogBySlug, getAllBlogSlugs, getRelatedBlogs } from "@/data/blogs";
+import { createMetadata, createFAQJsonLd, createBreadcrumbJsonLd } from "@/lib/seo";
+>>>>>>> 4ed6793d4d69d1bb84b4ed9ef8e97c626cda1658
 import { getRelatedLinks } from "@/lib/internal-links";
 import ContentPageLayout from "@/components/ContentPageLayout";
 import JsonLd from "@/components/JsonLd";

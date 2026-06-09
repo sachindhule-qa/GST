@@ -132,3 +132,4 @@ export default function CalculatorPageLayout({
     </>
   );
 }
+// The above is the original — the CalculatorContentLinks component below is a companion

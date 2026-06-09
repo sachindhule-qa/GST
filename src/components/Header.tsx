@@ -4,6 +4,13 @@ import Link from "next/link";
 import { useState } from "react";
 import { CALCULATORS, SITE_NAME } from "@/lib/constants";
 
+const NAV_LINKS = [
+  { href: "/blog", label: "Blog" },
+  { href: "/faq", label: "FAQs" },
+  { href: "/glossary", label: "Glossary" },
+  { href: "/compare", label: "Compare" },
+];
+
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -20,10 +27,7 @@ export default function Header() {
             {SITE_NAME}
           </Link>
 
-          <nav className="hidden md:flex items-center gap-6" aria-label="Main navigation">
-            <Link href="/" className="text-gray-700 hover:text-primary font-medium transition-colors">
-              Home
-            </Link>
+          <nav className="hidden md:flex items-center gap-5" aria-label="Main navigation">
             <div
               className="relative"
               onMouseEnter={() => setDropdownOpen(true)}
@@ -31,7 +35,7 @@ export default function Header() {
             >
               <button
                 type="button"
-                className="flex items-center gap-1 text-gray-700 hover:text-primary font-medium transition-colors"
+                className="flex items-center gap-1 text-gray-700 hover:text-primary font-medium transition-colors text-sm"
                 aria-expanded={dropdownOpen}
               >
                 Calculators
@@ -53,12 +57,15 @@ export default function Header() {
                 </div>
               )}
             </div>
-            <Link href="/gst-calculator" className="text-gray-700 hover:text-primary font-medium transition-colors">
-              GST Rates
-            </Link>
-            <Link href="/#contact" className="text-gray-700 hover:text-primary font-medium transition-colors">
-              Contact
-            </Link>
+            {NAV_LINKS.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-gray-700 hover:text-primary font-medium transition-colors text-sm"
+              >
+                {link.label}
+              </Link>
+            ))}
           </nav>
 
           <button
@@ -82,7 +89,7 @@ export default function Header() {
 
         {mobileOpen && (
           <nav className="md:hidden pb-4 border-t border-gray-100" aria-label="Mobile navigation">
-            <Link href="/" className="block py-3 text-gray-700 font-medium" onClick={() => setMobileOpen(false)}>
+            <Link href="/" className="block py-3 text-gray-700 font-medium text-sm" onClick={() => setMobileOpen(false)}>
               Home
             </Link>
             <p className="py-2 text-xs font-semibold text-gray-400 uppercase tracking-wider">Calculators</p>
@@ -90,18 +97,23 @@ export default function Header() {
               <Link
                 key={calc.slug}
                 href={`/${calc.slug}`}
-                className="block py-2.5 pl-3 text-gray-600 hover:text-primary"
+                className="block py-2.5 pl-3 text-gray-600 hover:text-primary text-sm"
                 onClick={() => setMobileOpen(false)}
               >
                 {calc.name}
               </Link>
             ))}
-            <Link href="/gst-calculator" className="block py-3 text-gray-700 font-medium" onClick={() => setMobileOpen(false)}>
-              GST Rates
-            </Link>
-            <Link href="/#contact" className="block py-3 text-gray-700 font-medium" onClick={() => setMobileOpen(false)}>
-              Contact
-            </Link>
+            <p className="py-2 mt-2 text-xs font-semibold text-gray-400 uppercase tracking-wider border-t border-gray-100">Content</p>
+            {NAV_LINKS.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="block py-2.5 pl-3 text-gray-600 hover:text-primary text-sm"
+                onClick={() => setMobileOpen(false)}
+              >
+                {link.label}
+              </Link>
+            ))}
           </nav>
         )}
       </div>

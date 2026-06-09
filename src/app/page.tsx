@@ -7,11 +7,11 @@ import { createFAQJsonLd, createMetadata, createWebAppJsonLd } from "@/lib/seo";
 import { Metadata } from "next";
 
 export const metadata: Metadata = createMetadata({
-  title: "GST Calculator India 2024-25 - Free Online Tax Calculators",
+  title: "Free GST, EMI, SIP & Tax Calculators India 2025 — 100+ Calculators",
   description:
-    "Free GST calculator India 2024-25. Calculate CGST, SGST, IGST, TDS, income tax & more. 15+ online finance calculators for businesses and individuals.",
+    "100+ free online calculators for India — GST, income tax, EMI, SIP, FD, PPF, NPS, salary, retirement and more. No signup, instant results for businesses and individuals.",
   keywords:
-    "GST calculator, GST calculator India, TDS calculator, income tax calculator, free tax calculator India",
+    "GST calculator India, EMI calculator, SIP calculator, income tax calculator, FD calculator, PPF calculator, free calculators India 2025",
   slug: "",
 });
 
@@ -99,12 +99,25 @@ export default function HomePage() {
 
       <section className="max-w-6xl mx-auto px-4 sm:px-6 py-16">
         <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-2 text-center">
-          All Calculators
+          100+ Free Calculators
         </h2>
-        <p className="text-gray-600 text-center mb-10">
-          15 free online calculators for GST, tax, and payroll
+        <p className="text-gray-600 text-center mb-4">
+          GST, income tax, EMI, SIP, FD, PPF, salary, retirement and more
         </p>
+        <div className="text-center mb-8">
+          <a
+            href="/calculators"
+            className="inline-flex items-center gap-2 bg-blue-600 text-white px-5 py-2.5 rounded-xl text-sm font-semibold hover:bg-blue-700 transition-colors"
+          >
+            Browse All 100+ Calculators →
+          </a>
+        </div>
         <CalculatorGrid />
+        <div className="text-center mt-8">
+          <a href="/calculators" className="text-sm text-blue-600 font-medium hover:underline">
+            + View EMI, SIP, FD, PPF, Retirement & 85 more calculators →
+          </a>
+        </div>
       </section>
 
       <section className="bg-white border-y border-gray-100">
